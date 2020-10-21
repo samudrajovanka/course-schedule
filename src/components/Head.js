@@ -1,5 +1,6 @@
 import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import COLORS from '../config/colors';
 
 const Head = (props) => {
   return (
@@ -11,7 +12,7 @@ const Head = (props) => {
 
 const styles = StyleSheet.create({
   styleHead: {
-    backgroundColor: '#01C5C4',
+    backgroundColor: COLORS.aquaLight,
     height: 100,
     borderBottomEndRadius: 80,
     borderBottomStartRadius: 80,
@@ -19,7 +20,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     lineHeight: 100,
-    color: 'white',
+    color: COLORS.white,
     fontWeight: 'bold',
   },
   center: {

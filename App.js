@@ -3,16 +3,21 @@ import {StatusBar} from 'react-native';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
+import COLORS from './src/config/colors';
+
 const Stack = createStackNavigator();
 
-import HomeScreen from './android/app/screen/HomeScreen';
-import CourseScreen from './android/app/screen/CourseScreen';
+import HomeScreen from './src/screens/HomeScreen';
+import CourseScreen from './src/screens/CourseScreen';
 
 class App extends Component {
   render() {
     return (
       <>
-        <StatusBar backgroundColor="#01C5C4" barStyle="light-content" />
+        <StatusBar
+          backgroundColor={COLORS.aquaLight}
+          barStyle="light-content"
+        />
         <NavigationContainer theme={MyTheme}>
           <Stack.Navigator initialRouteName="Jadwal Kuliah">
             <Stack.Screen name="Jadwal Kuliah" component={HomeScreen} />
@@ -28,8 +33,8 @@ const MyTheme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    card: '#01C5C4',
-    text: '#fff',
+    card: COLORS.aquaLight,
+    text: COLORS.white,
   },
 };
 

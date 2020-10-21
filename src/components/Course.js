@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
+import COLORS from '../config/colors';
+
 class Course extends Component {
   constructor(props) {
     super(props);
@@ -40,14 +42,14 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     marginTop: 10,
-    color: '#F39233',
+    color: COLORS.orange,
   },
   container: {
     flexDirection: 'row',
     marginTop: 5,
   },
   radius: {
-    backgroundColor: '#f3c623',
+    backgroundColor: COLORS.yellow,
     marginStart: 10,
     marginBottom: 10,
     padding: 5,
@@ -62,11 +64,11 @@ const styles = StyleSheet.create({
   data: {
     fontSize: 15,
     textAlign: 'center',
-    color: '#F4F6FF',
+    color: COLORS.white,
     fontWeight: 'bold',
   },
   underBorder: {
-    borderBottomColor: '#01C5C455',
+    borderBottomColor: COLORS.aquaLight_05,
     borderBottomWidth: 2,
   },
 });

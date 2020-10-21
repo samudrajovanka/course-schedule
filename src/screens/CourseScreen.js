@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
 import Head from '../components/Head';
 import Course from '../components/Course';
+import COLORS from '../config/colors';
 
 class CourseScreen extends Component {
   constructor(props) {
@@ -38,13 +39,13 @@ const styles = StyleSheet.create({
     margin: 20,
   },
   card: {
-    shadowColor: '#000',
+    shadowColor: COLORS.black,
     shadowOffset: {
       width: 0,
       height: 2,
     },
     shadowOpacity: 0.25,
-    backgroundColor: 'white',
+    backgroundColor: COLORS.white,
     shadowRadius: 3.84,
     elevation: 5,
     borderRadius: 10,
