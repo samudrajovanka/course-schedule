@@ -10,15 +10,7 @@ class Day extends Component {
       day: this.props.day,
       courses: this.props.courses,
       isUnderBorder: this.props.isUnderBorder,
-      weekDays: [
-        'Minggu',
-        'Senin',
-        'Selasa',
-        'Rabu',
-        'Kamis',
-        'Jumat',
-        'Sabtu',
-      ],
+      days: ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'],
     };
   }
 
@@ -30,7 +22,7 @@ class Day extends Component {
 
   activeDay() {
     const stylesActive = [styles.container];
-    if (this.state.day === this.state.weekDays[new Date().getDay()]) {
+    if (this.state.day === this.state.days[new Date().getDay()]) {
       stylesActive.push(styles.activeDay);
       return stylesActive;
     }
@@ -61,15 +53,16 @@ class Day extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    paddingStart: 10,
-    paddingEnd: 10,
+    paddingStart: 20,
+    paddingEnd: 20,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
   subTitle: {
     fontSize: 25,
-    margin: 10,
+    marginTop: 10,
+    marginBottom: 10,
     color: COLORS.orange,
   },
   underBorder: {

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 
+import Badge from '../components/Badge';
 import COLORS from '../config/colors';
 
 class Course extends Component {
@@ -21,13 +22,17 @@ class Course extends Component {
   render() {
     return (
       <View>
-        <Text style={styles.course}>{this.state.course.course}</Text>
         <View style={styles.container}>
-          <View style={[styles.radius, styles.time]}>
-            <Text style={styles.data}>{this.state.course.time}</Text>
-          </View>
-          <View style={[styles.radius, styles.class]}>
-            <Text style={styles.data}>{this.state.course.class}</Text>
+          <Text style={styles.course}>{this.state.course.course}</Text>
+          <View style={styles.containerData}>
+            <Badge
+              title={this.state.course.time}
+              backgroundColor={COLORS.yellow}
+            />
+            <Badge
+              title={this.state.course.class}
+              backgroundColor={COLORS.yellow}
+            />
           </View>
         </View>
         {this.underBorder(this.state.isUnderBorder)}
@@ -37,35 +42,18 @@ class Course extends Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    paddingStart: 20,
+    paddingEnd: 20,
+  },
   course: {
     fontSize: 25,
-    marginLeft: 10,
-    marginRight: 10,
     marginTop: 10,
     color: COLORS.orange,
   },
-  container: {
+  containerData: {
     flexDirection: 'row',
     marginTop: 5,
-  },
-  radius: {
-    backgroundColor: COLORS.yellow,
-    marginStart: 10,
-    marginBottom: 10,
-    padding: 5,
-    borderRadius: 120,
-  },
-  time: {
-    width: 120,
-  },
-  class: {
-    width: 30,
-  },
-  data: {
-    fontSize: 15,
-    textAlign: 'center',
-    color: COLORS.white,
-    fontWeight: 'bold',
   },
   underBorder: {
     borderBottomColor: COLORS.aquaLight_05,

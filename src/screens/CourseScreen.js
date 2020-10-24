@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, SafeAreaView, ScrollView} from 'react-native';
 
 import Head from '../components/Head';
 import Course from '../components/Course';
@@ -17,19 +17,21 @@ class CourseScreen extends Component {
 
   render() {
     return (
-      <View>
-        <Head title={this.state.day} />
-        <View style={styles.container}>
-          <View style={styles.card}>
-            {this.state.courses.map((course, i) => {
-              if (this.state.courses.length === i + 1) {
-                return <Course key={i} course={course} />;
-              }
-              return <Course key={i} course={course} isUnderBorder="true" />;
-            })}
+      <SafeAreaView>
+        <ScrollView>
+          <Head title={this.state.day} />
+          <View style={styles.container}>
+            <View style={styles.card}>
+              {this.state.courses.map((course, i) => {
+                if (this.state.courses.length === i + 1) {
+                  return <Course key={i} course={course} />;
+                }
+                return <Course key={i} course={course} isUnderBorder="true" />;
+              })}
+            </View>
           </View>
-        </View>
-      </View>
+        </ScrollView>
+      </SafeAreaView>
     );
   }
 }

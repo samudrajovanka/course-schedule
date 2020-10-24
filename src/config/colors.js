@@ -6,6 +6,8 @@ const COLORS = {
   orange: '#F39233',
   yellow: '#f3c623',
   primaryLight: '#d9e7ff',
+  salmon: '#ff4e3b',
+  green: '#33e849',
 };
 
 export default COLORS;

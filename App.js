@@ -9,8 +9,25 @@ const Stack = createStackNavigator();
 
 import HomeScreen from './src/screens/HomeScreen';
 import CourseScreen from './src/screens/CourseScreen';
+import AddTask from './src/screens/AddTask';
 
 class App extends Component {
+  // UNSAFE_componentWillMount() {
+  //   let firebaseConfig = {
+  //     apiKey: 'AIzaSyCgOocW3xjIwmrpznKTEkW0qQiI5e31bzU',
+  //     authDomain: 'course-schedule-app.firebaseapp.com',
+  //     databaseURL: 'https://course-schedule-app.firebaseio.com',
+  //     projectId: 'course-schedule-app',
+  //     storageBucket: 'course-schedule-app.appspot.com',
+  //     messagingSenderId: '151349460460',
+  //     appId: '1:151349460460:web:5900e2c8c7ae8f1b2094c9',
+  //     measurementId: 'G-RK9NMT4MQ7',
+  //   };
+  //   // Initialize Firebase
+  //   firebase.initializeApp(firebaseConfig);
+  //   firebase.analytics();
+  // }
+
   render() {
     return (
       <>
@@ -22,6 +39,7 @@ class App extends Component {
           <Stack.Navigator initialRouteName="Jadwal Kuliah">
             <Stack.Screen name="Jadwal Kuliah" component={HomeScreen} />
             <Stack.Screen name="Mata Kuliah" component={CourseScreen} />
+            <Stack.Screen name="Tambah Tugas" component={AddTask} />
           </Stack.Navigator>
         </NavigationContainer>
       </>
